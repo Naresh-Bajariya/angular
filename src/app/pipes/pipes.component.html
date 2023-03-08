@@ -1,0 +1,25 @@
+<h1>pipes Component!</h1>
+<p>Angular Pipes can be used to transform data to desired output.</p>
+<p>Pipes takes in a data input and trasforms data to a different output</p>
+<table border="1">
+  <tr>
+    <th>Emp Cod</th>
+    <th>Emp Name</th>
+    <th>Salary</th>
+    <th>Date of Birth</th>
+  </tr>
+  <tr *ngFor="let e of employees">
+    <td>{{ e.code }}</td>
+    <td>{{ e.name | uppercase}}</td>
+    <td>{{ e.salary }}</td>
+    <td>{{ e.dob }}</td>
+  </tr>
+</table>
+
+<h2>Parameterize Pipes</h2>
+<div>
+    {{date}} <br>
+    {{date | date:"medium"}} <br>
+    {{date | date:"dd/mm/yyyy"}} <br>
+    medium time : {{date | date: "mediumTime"}}
+</div>

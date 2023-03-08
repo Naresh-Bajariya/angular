@@ -1,2 +1,12 @@
-<h1>Angular
+<h1>Angular Start
 </h1>
+<!-- Enter your Name: <input [value]='data' (input)='data=$event.target.value'  > -->
+<input [ngModel]="data" (ngModelChange)="data = $event">
+
+
+Your Name:{{data}}
+
+<input [(ngModel)]='data1' >
+ngmodel using your Name:{{data1 | uppercase}}
+<app-child></app-child>
+<app-pipes></app-pipes>

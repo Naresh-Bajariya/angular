@@ -1,1 +1,153 @@
 <p>child works!</p>
+<h2>Grouping with *ngFor</h2>
+<ul *ngFor="let group of countrydetails">
+  <li>{{ group.country }}</li>
+  <ul>
+    <li *ngFor="let person of group.people">
+      {{ person.name }}
+    </li>
+  </ul>
+</ul>
+<!-- ngstyle -->
+
+<h2>ngStyle Example</h2>
+<ul *ngFor="let person of people">
+  <li [ngStyle]="{ color: getcolor(person.country) }">
+    {{ person.name }}- {{ person.country }}
+  </li>
+</ul>
+
+<!-- ngClass -->
+<h2>ngClass</h2>
+<p>
+  ngClass directive allows us to set the CSS class dynamically foe=r a DOM
+  elemnt
+</p>
+<ul>
+  <li>ngClass with string</li>
+  <li>ngClass with array</li>
+  <li>ngClass with object</li>
+  <li>ngClass with component method</li>
+</ul>
+
+<h2>USing ngClass as string</h2>
+<p [ngClass]="'one'">Using ngClass with String example</p>
+<div *ngFor="let person of people" [ngClass]="'three'">
+  {{ person.name }}
+</div>
+<p [ngClass]="{ one: 'true' }">Example using ng class as object</p>
+<div [ngClass]="getcssclass('mode')">
+  example using ngclass with component method
+</div>
+
+<!-- Data binding -->
+<h2>Data binding</h2>
+<p>
+  Data Binding means to bind the View (Html content ) with Controlleer's
+  (component's) field. That is whenever we display dynamic data on a view (HTML)
+  from Component ,data binding is used.
+</p>
+<P>
+  Data Binding basically means interacting with data.So,we can that the
+  interaction between templates and business logic is called data binding.
+</P>
+<p><Strong>Databinding = Communication</Strong></p>
+<ul>
+  <p>Two way data binding</p>
+  <ol>
+    One-Way Binding
+  </ol>
+  <ol>
+    Two-Way Binding
+  </ol>
+</ul>
+
+<div>
+  <table border="1">
+    <tr>
+      <th colspan="2">One-Way Binding</th>
+      <!-- <th>One-Way Binding</th> -->
+     
+    </tr>
+    <tr>
+      <td>
+        <table>
+          <tr>
+            <th>component To View</th>
+          </tr>
+          <tr>
+            <ul>
+              <li>Interpolation Binding</li>
+              <li>Property Binding</li>
+              <li>Style Binding</li>
+              <li>Class Binding</li>
+              <li>Attribue Binding</li>
+            </ul>
+          </tr>
+        </table>
+      </td>
+     <td>
+        <table>
+            <tr>
+              <th> View to Component</th>
+            </tr>
+            <tr>
+             <td>
+                Event Binding
+             </td>
+            </tr>
+          </table>
+     </td>
+    
+    </tr>
+  </table>
+</div>
+
+<h3>Classification Data binding</h3>
+<p>Binding types can be grouped into three categories distinguished by the direction of data flow:</p>
+<ul style="list-style: decimal;">
+    <li>Source (Component)-to -view</li>
+    <li>view-to-Source (Component)</li>
+    <li>Two-way sequence: view-to-source(Component)-to-view</li>
+</ul>
+
+<!-- Interpolation -->
+<h3>Interpolation</h3>
+<p>{{title}}</p>
+
+<!-- Property binding -->
+<h3>Property binding </h3>
+<span [innerHTML]="title">Property binding</span>
+First Name <span [innerHTML]="firstname"></span>
+<p>It is used to bind values of component/modal properties to the Html element</p>
+<p>Depending on the values, it will change the existing behavior of the HTML element.</p>
+<p><strong>Syntax-[propert]="expression"</strong></p>
+<p>In property binding ,there is source and target. For this example, We can define it as [innerHTML]="firstname".</p>
+<p>Here,innerHTYML is a target that is a property of span tag and source is a component property i.e. firstname</p>
+
+<!-- Event binding -->
+<h3>Event binding</h3>
+<button (click)="showdata()">Event call</button>
+
+<!-- Property binding and interpolation -->
+<h2>Property binding and interpolation</h2>
+<p><img alt="Interpolated item" src="{{itemImageUrl}}"> is the <i>interpolated</i> image.</p>
+<p><img alt="Property Bound item" [src]="itemImageUrl"> is the <i>property bound</i> image.</p>
+
+<p><span>"{{interpolationTitle}}" is the <i>interpolated</i> title.</span></p>
+<p>"<span [innerHTML]="propertyTitle"></span>" is the <i>property bound</i> title.</p>
+
+<!-- Tow way Data binding  -->
+<h3>Tow way Data binding </h3>
+<p>The most popural and widely used data binding mechanism is two-way binding  in the angular framwork.</p>
+<p>Basically two-way binding mainly used in the input type field or any from element where user type or provide any value or change any control value in the one side,and on the other side, the same automatically updated in to the controller variables and vice versa</p>
+<P>(event binding) + [property binding]=>[(ngModel)] = Two-Way Data Binding</P>
+
+<!-- <input [value]="'data1" (input)='data=$Event.target.value'> or -->
+<!-- <input [(ngModel)]="data"> -->
+<!-- Enter your Name: <input [value]='data' (input)='data=$event.target.value'  /> -->
+Your Name:{{data}}
+
+<input [(ngModel)]='data2' >
+ngmodel using your Name:{{data2}}
+
