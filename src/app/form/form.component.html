@@ -1,0 +1,29 @@
+<h1>Form Satrt</h1>
+<div class="container">
+    <div class="row">
+        <div class="form_bg">
+            <form [formGroup]="signupForm" (ngSubmit)="PostData(signupForm)">
+                <div class="form-group">
+                    <input type="text" formControlName="fname" name="fname" placeholder="Your First Name">
+                    <span *ngFor="signupForm.controls['fname'].haserror(required)">First Name Required</span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="text" formControlName="lname" placeholder="Your Last Name">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="email" formControlName="email" placeholder="Your EmailId">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="password" formControlName="password" placeholder="Your Password">
+                </div>
+                <br>
+                <input type="submit" value="Post Data" [disabled]="!signupForm.valid">
+                <br>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>

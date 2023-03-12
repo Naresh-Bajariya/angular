@@ -1,0 +1,66 @@
+<h1>Reactive Form!</h1>
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <label for="username">Username: </label>
+  <input type="text" placeholder="Enter Your Name" formControlName="username" />
+  <span  class="form-text text-danger" *ngIf="user && user.invalid && user.touched"
+    >This Is Not Valid UserName
+  </span>
+  <br />
+  <br />
+  <label for="password">Password: </label>
+  <input
+    type="password"
+    placeholder="Enter your password"
+    formControlName="password"
+  />
+  <span class="form-text text-danger" *ngIf="password && password.invalid && password.touched"
+    >This Is Not Valid Password
+  </span>
+  <br />
+  <br />
+  <label for="first-name">First Name: </label>
+  <input id="first-name" type="text" formControlName="firstName" />
+
+    <div  class="form-text text-danger" *ngIf="firstName && firstName.invalid && firstName.touched">
+      
+      <div *ngIf="firstName.errors?.['required']">
+        This Is Not Valid First Name
+      </div>
+      <div *ngIf="firstName.errors?.['minlength']">
+        Name must be at least 6 characters long.
+      </div>
+    </div>
+  
+  
+<br><br>
+  <label for="last-name">Last Name: </label>
+  <input id="last-name" type="text" formControlName="lastName" />
+  <span  class="form-text text-danger" *ngIf="lastName && lastName.invalid && lastName.touched"
+    >This Is Not Valid Last Name
+  </span>
+  <br /> <br>
+
+  <label for="phone">Phone NO </label>
+  <input id="phone" type="number" formControlName="phone" />
+  <span  class="form-text text-danger" *ngIf="phone && phone.invalid && phone.touched"
+    >This Is Not Valid Phone No
+  </span>
+  <div formGroupName="address">
+    <h2>Address</h2>
+
+    <label for="street">Street: </label>
+    <input id="street" type="text" formControlName="street" />
+
+<br> <br>
+    <label for="city">City: </label>
+    <input id="city" type="text" formControlName="city" />
+<br> <br>
+    <label for="state">State: </label>
+    <input id="state" type="text" formControlName="state" />
+    <br> <br>
+    <label for="zip">Zip Code: </label>
+    <input id="zip" type="text" formControlName="zip" />
+    
+  </div>
+  <button type="submit">Login</button>
+</form>
