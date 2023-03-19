@@ -9,6 +9,8 @@ import { PipesComponent } from './pipes/pipes.component';
 import { ServiceComponent } from './service/service.component';
 import { RelativeformComponent } from './reactiveform/reactiveform.component';
 import { FormComponent } from './form/form.component';
+import { FormarrayComponent } from './formarray/formarray.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,15 @@ import { FormComponent } from './form/form.component';
     PipesComponent,
     ServiceComponent,
     RelativeformComponent,
-    FormComponent
+    FormComponent,
+    FormarrayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

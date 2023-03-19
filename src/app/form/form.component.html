@@ -5,7 +5,7 @@
             <form [formGroup]="signupForm" (ngSubmit)="PostData(signupForm)">
                 <div class="form-group">
                     <input type="text" formControlName="fname" name="fname" placeholder="Your First Name">
-                    <span *ngFor="signupForm.controls['fname'].haserror(required)">First Name Required</span>
+                    <!-- <span *ngFor="signupForm.controls['fname'].Haserror(required)">First Name Required</span> -->
                 </div>
                 <br>
                 <div class="form-group">
